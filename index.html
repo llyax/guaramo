@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GUARAMO — plataforma de apoio a pessoas migrantes.">
+  <title>GUARAMO | Apoio e acolhimento</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="GUARAMO — página inicial">
+      <span class="brand-mark" aria-hidden="true">G</span><span>GUARAMO</span>
+    </a>
+    <nav class="main-nav" aria-label="Navegação principal">
+      <a href="#doacoes" data-i18n="nav_donations">Doações</a>
+      <a href="#ajuda" data-i18n="nav_help">Ajuda</a>
+      <a href="#empregos" data-i18n="nav_jobs">Empregos</a>
+      <a href="#voluntarios" data-i18n="nav_volunteers">Voluntários</a>
+      <a href="#diplomas" data-i18n="nav_diplomas">Diplomas</a>
+    </nav>
+    <label class="language-control">
+      <span class="sr-only" data-i18n="language_label">Idioma</span>
+      <select id="language" aria-label="Idioma">
+        <option value="pt">Português</option>
+        <option value="es">Español</option>
+        <option value="en">English</option>
+      </select>
+    </label>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileNav">Menu</button>
+  </header>
+
+  <nav id="mobileNav" class="mobile-nav" aria-label="Navegação móvel" hidden>
+    <a href="#doacoes" data-i18n="nav_donations">Doações</a><a href="#ajuda" data-i18n="nav_help">Ajuda</a>
+    <a href="#empregos" data-i18n="nav_jobs">Empregos</a><a href="#voluntarios" data-i18n="nav_volunteers">Voluntários</a>
+    <a href="#diplomas" data-i18n="nav_diplomas">Diplomas</a>
+  </nav>
+
+  <main id="conteudo">
+    <section class="hero" id="inicio">
+      <div class="hero-copy">
+        <p class="eyebrow" data-i18n="eyebrow">ACOLHIMENTO • INFORMAÇÃO • OPORTUNIDADES</p>
+        <h1 data-i18n="hero_title">Um caminho de apoio para recomeçar.</h1>
+        <p class="hero-text" data-i18n="hero_text">Encontre informações sobre doações, serviços de apoio, oportunidades de trabalho e voluntariado.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#ajuda" data-i18n="hero_cta">Encontrar apoio</a>
+          <a class="button button-outline" href="#doacoes" data-i18n="hero_secondary">Consultar doações</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true"><div class="art-circle"></div><div class="art-card"><span>GUARAMO</span><strong>Bem-vindo.<br>Bienvenido.<br>Welcome.</strong></div></div>
+    </section>
+
+    <section class="section" id="doacoes">
+      <div class="section-heading"><p class="eyebrow" data-i18n="eyebrow_donations">REDE DE DOAÇÕES</p><h2 data-i18n="donations_title">Consulte os pontos de doação</h2><p data-i18n="donations_text">Veja a disponibilidade informada em cada ponto. Os locais serão apresentados quando forem confirmados.</p></div>
+      <div class="notice" role="note"><strong data-i18n="pending_title">Locais em definição</strong><span data-i18n="pending_text">Os cinco pontos de doação ainda não têm nomes e endereços confirmados. Por isso, não exibimos localizações fictícias.</span></div>
+      <div class="stock-grid" id="publicStock" aria-live="polite"></div>
+    </section>
+
+    <section class="section section-soft" id="ajuda">
+      <div class="section-heading"><p class="eyebrow" data-i18n="eyebrow_help">APOIO E ORIENTAÇÃO</p><h2 data-i18n="help_title">Que tipo de ajuda você procura?</h2><p data-i18n="help_text">Escolha uma área para conhecer as possibilidades de atendimento.</p></div>
+      <div class="feature-grid">
+        <article class="feature-card"><span class="feature-number">01</span><h3 data-i18n="shelter_title">Abrigos e acolhimento</h3><p data-i18n="shelter_text">Consulte serviços de abrigo próximos usando sua localização ou informando uma região.</p><button class="text-button" data-action="location" data-target="shelter" data-i18n="find_nearby">Buscar locais próximos →</button><p class="result" id="shelterResult" aria-live="polite"></p></article>
+        <article class="feature-card"><span class="feature-number">02</span><h3 data-i18n="psych_title">Apoio psicológico</h3><p data-i18n="psych_text">Informações sobre atendimento com psicólogos e estudantes/estagiários sob supervisão profissional.</p><p class="small-note" data-i18n="psych_note">A disponibilidade e os locais de atendimento precisam ser confirmados pela equipe responsável.</p></article>
+        <article class="feature-card"><span class="feature-number">03</span><h3 data-i18n="work_support_title">Orientação para trabalho</h3><p data-i18n="work_support_text">Encontre oportunidades e pontos de atendimento ao trabalhador.</p><a class="text-button" href="#empregos" data-i18n="see_jobs">Ver área de empregos →</a></article>
+      </div>
+    </section>
+
+    <section class="section" id="empregos">
+      <div class="section-heading"><p class="eyebrow" data-i18n="eyebrow_jobs">TRABALHO E RENDA</p><h2 data-i18n="jobs_title">Empregos e atendimento ao trabalhador</h2><p data-i18n="jobs_text">A área está preparada para apresentar vagas e pontos de atendimento quando houver informações verificadas.</p></div>
+      <div class="two-column">
+        <article class="panel"><h3 data-i18n="job_search_title">Buscar oportunidades</h3><label for="jobQuery" data-i18n="job_search_label">Cargo, área ou palavra-chave</label><input id="jobQuery" type="search" placeholder="Ex.: auxiliar administrativo" data-i18n-placeholder="job_placeholder"><button class="button button-primary" id="jobSearch" data-i18n="search">Buscar</button><p class="result" id="jobResult" aria-live="polite"></p></article>
+        <article class="panel panel-dark"><h3 data-i18n="worker_center_title">Centros de atendimento</h3><p data-i18n="worker_center_text">Você também poderá procurar pontos de atendimento ao trabalhador pela sua região.</p><button class="button button-light" data-action="location" data-target="worker" data-i18n="find_nearby">Buscar locais próximos →</button><p class="result" id="workerResult" aria-live="polite"></p></article>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="voluntarios">
+      <div class="section-heading"><p class="eyebrow" data-i18n="eyebrow_volunteers">FAÇA PARTE DA REDE</p><h2 data-i18n="volunteers_title">Seja voluntário</h2><p data-i18n="volunteers_text">Profissionais e estudantes podem demonstrar interesse em colaborar. O cadastro depende de análise e aprovação.</p></div>
+      <form class="form-card" id="volunteerForm">
+        <div class="form-grid">
+          <div class="field"><label for="volName" data-i18n="name">Nome completo</label><input id="volName" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="volArea" data-i18n="area">Área de atuação</label><input id="volArea" name="area" required></div>
+          <div class="field"><label for="volInstitution" data-i18n="institution">Instituição de ensino ou trabalho</label><input id="volInstitution" name="institution" required></div>
+          <div class="field"><label for="volEmail" data-i18n="email">E-mail</label><input id="volEmail" name="email" type="email" autocomplete="email" required></div>
+          <div class="field field-full"><label for="volDocument" data-i18n="proof">Diploma ou comprovante de matrícula (PDF ou imagem)</label><input id="volDocument" name="document" type="file" accept=".pdf,.png,.jpg,.jpeg" required><small data-i18n="proof_help">Demonstração local: o arquivo não é enviado a um servidor.</small></div>
+        </div>
+        <p class="privacy" data-i18n="privacy">Seus dados devem ser usados somente para avaliar o cadastro e entrar em contato. Nesta versão demonstrativa, os dados não são enviados nem armazenados em servidor.</p>
+        <button class="button button-primary" type="submit" data-i18n="send_registration">Enviar cadastro para análise</button>
+        <p class="result" id="volunteerResult" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="section" id="diplomas">
+      <div class="section-heading"><p class="eyebrow" data-i18n="eyebrow_diplomas">FORMAÇÃO E RECONHECIMENTO</p><h2 data-i18n="diplomas_title">Reconhecimento de diplomas</h2><p data-i18n="diplomas_text">Área de orientação para migrantes que desejam buscar informações sobre o reconhecimento de diplomas obtidos em outro país.</p></div>
+      <div class="notice"><strong data-i18n="diplomas_notice_title">Informação importante</strong><span data-i18n="diplomas_notice_text">Os procedimentos variam conforme o tipo de formação e as regras aplicáveis. Esta demonstração não apresenta etapas ou exigências legais não confirmadas.</span></div>
+    </section>
+
+    <section class="admin-entry"><div><p class="eyebrow">GUARAMO • ADMINISTRAÇÃO</p><h2 data-i18n="admin_title">Área administrativa</h2><p data-i18n="admin_text">Acesso reservado à equipe autorizada.</p></div><button class="button button-outline" id="openAdmin" data-i18n="admin_login">Entrar como administrador</button></section>
+
+    <section class="section admin-section" id="adminPanel" hidden>
+      <div class="section-heading"><p class="eyebrow">ADMINISTRAÇÃO</p><h2 data-i18n="admin_dashboard">Painel administrativo</h2><p data-i18n="admin_demo_warning">DEMONSTRAÇÃO: autenticação e dados ficam somente neste navegador. Não use informações reais.</p></div>
+      <div class="admin-tabs"><button class="tab-button active" data-tab="stocks" data-i18n="manage_stock">Gerenciar estoques</button><button class="tab-button" data-tab="requests" data-i18n="review_requests">Solicitações</button><button class="tab-button" id="adminLogout" data-i18n="logout">Sair</button></div>
+      <div id="stocksTab"><div class="panel"><h3 data-i18n="stock_update">Atualizar estoque</h3><div class="form-grid"><div class="field"><label for="stockPoint" data-i18n="donation_point">Ponto de doação</label><select id="stockPoint"></select></div><div class="field"><label for="stockItem" data-i18n="item_name">Item</label><input id="stockItem" placeholder="EXEMPLO: cobertores"></div><div class="field"><label for="stockQuantity" data-i18n="quantity">Quantidade</label><input id="stockQuantity" type="number" min="0" step="1"></div><div class="field"><label for="stockAction" data-i18n="operation">Operação</label><select id="stockAction"><option value="set">Definir quantidade</option><option value="add">Adicionar</option><option value="remove">Remover</option></select></div></div><button class="button button-primary" id="saveStock" data-i18n="save_update">Salvar atualização</button><p class="result" id="stockAdminResult" aria-live="polite"></p></div><div id="adminStockList" class="admin-list"></div></div>
+      <div id="requestsTab" hidden><div class="notice"><strong data-i18n="no_backend_requests">Sem solicitações reais</strong><span data-i18n="no_backend_text">O envio de formulários não chega à administração nesta versão local. Para isso, será necessário configurar um backend seguro.</span></div></div>
+    </section>
+  </main>
+
+  <footer class="footer"><a class="brand brand-footer" href="#inicio"><span class="brand-mark">G</span><span>GUARAMO</span></a><p data-i18n="footer_text">Acolhimento, informação e oportunidades.</p><span>© GUARAMO</span></footer>
+
+  <dialog id="adminDialog" class="dialog">
+    <form method="dialog" class="dialog-close"><button aria-label="Fechar">×</button></form>
+    <p class="eyebrow">GUARAMO • ADMIN</p><h2 data-i18n="admin_login">Entrar como administrador</h2>
+    <form id="loginForm"><div class="field"><label for="adminUser" data-i18n="username">Usuário</label><input id="adminUser" autocomplete="username" required></div><div class="field"><label for="adminPassword" data-i18n="password">Senha</label><input id="adminPassword" type="password" autocomplete="current-password" required></div><button class="button button-primary" type="submit" data-i18n="enter">Entrar</button><p class="result" id="loginResult" aria-live="polite"></p></form>
+    <p class="small-note" data-i18n="demo_credentials">Credenciais demonstrativas: admin / gu aramo123 (troque antes de qualquer uso real).</p>
+  </dialog>
+  <script src="js/app.js"></script>
+</body>
+</html>
